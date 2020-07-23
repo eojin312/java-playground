@@ -52,20 +52,13 @@
             </exclusions>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/com.mysema.querydsl/querydsl-jpa -->
+        <!-- https://mvnrepository.com/artifact/com.querydsl/querydsl-jpa -->
         <dependency>
-            <groupId>com.mysema.querydsl</groupId>
+            <groupId>com.querydsl</groupId>
             <artifactId>querydsl-jpa</artifactId>
-            <version>3.7.4</version>
+            <version>4.3.1</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/com.mysema.querydsl/querydsl-apt -->
-        <dependency>
-            <groupId>com.mysema.querydsl</groupId>
-            <artifactId>querydsl-apt</artifactId>
-            <version>3.7.4</version>
-            <scope>provided</scope>
-        </dependency>
     </dependencies>
 
     <build>
