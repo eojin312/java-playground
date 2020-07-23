@@ -5,6 +5,7 @@ package hachi.javaplayground;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import hachi.javaplayground.entity.Item;
 import hachi.javaplayground.entity.QItem;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -29,9 +30,15 @@ class JavaPlaygroundApplicationTests {
         Item item = new Item();
         em.persist(item);
 
-        JPAQueryFactory jpaQueryFactory = new JPAQueryFactory(em);
+        JPAQueryFactory query = new JPAQueryFactory(em);
+        QItem qItem = QItem.item;
 
-        QItem qItem = new QItem("i");
+        Item result = query
+                .selectFrom(qItem)
+                .fetchOne();
+
+        Assertions.assertThat(result).isEqualTo(item);
+        Assertions.assertThat(result.getId()).isEqualTo(item.getId());
     }
 
 }
