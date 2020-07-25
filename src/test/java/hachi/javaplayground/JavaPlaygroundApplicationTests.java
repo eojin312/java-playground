@@ -40,5 +40,4 @@ class JavaPlaygroundApplicationTests {
         Assertions.assertThat(result).isEqualTo(item);
         Assertions.assertThat(result.getId()).isEqualTo(item.getId());
     }
-
 }
