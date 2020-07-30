@@ -7,3 +7,7 @@
 - [== 와 .equals() 차이점](https://eojin312.github.io/%EA%B3%B5%EB%B6%80/equal/)
 
 [== 와 .equals() 실제 예제코드](https://github.com/eojin312/java-playground/blob/master/src/test/java/hachi/javaplayground/basic/equals/NameTest.java)
+
+- [Querydsl 과 JPQL 차이점](https://eojin312.github.io/%EA%B3%B5%EB%B6%80/querydsl2/)
+
+[Querydsl 과 JPQL 차이점 실제 예제코드](https://github.com/eojin312/java-playground/blob/master/src/test/java/hachi/javaplayground/QueryDslBasicTest.java)
