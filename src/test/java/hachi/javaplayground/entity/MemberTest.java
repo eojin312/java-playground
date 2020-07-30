@@ -31,6 +31,11 @@ class MemberTest {
         Member member3 = new Member("soriegedon", 10, teamB);
         Member member4 = new Member("kelly", 10, teamB);
 
+        em.persist(member1);
+        em.persist(member2);
+        em.persist(member3);
+        em.persist(member4);
+
         //초기화
         em.flush();
         em.clear();

@@ -28,10 +28,12 @@ public class Member {
     @JoinColumn(name = "team_id")
     private Team team;
 
+    // 나이 있어도 되는 생성자
     public Member(String username) {
         this(username, 0);
     }
 
+    // 나이 없어도 되는 생성자
     public Member(String username, int age) {
         this(username, 0, null);
     }
