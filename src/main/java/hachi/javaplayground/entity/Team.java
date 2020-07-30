@@ -1,6 +1,9 @@
 package hachi.javaplayground.entity;
 
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -8,6 +11,8 @@ import java.util.List;
 
 @Entity
 @Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED) // 기본 생성자 만들어줌
+@ToString(of = {"id", "name"})
 public class Team {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,4 +22,8 @@ public class Team {
 
     @OneToMany(mappedBy = "team")
     private List<Member> members = new ArrayList<>();
+
+    public Team(String name) {
+        this.name = name;
+    }
 }
