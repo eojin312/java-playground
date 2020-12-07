@@ -20,10 +20,7 @@ public class App {
                 .collect(Collectors.toList());
 
         collect.forEach(System.out::println);
-
-
         stringList.forEach(System.out::println);
-
         return stringList;
     }
 
