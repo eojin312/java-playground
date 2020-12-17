@@ -22,6 +22,7 @@ public class Foo {
             }
         }
         // 익명 클래스
+        // 익명 클래스와 로컬 클래스는 셰도우로 가려진다 (스코프가 같아서)
         Consumer<Integer> integerConsumer = new Consumer<Integer>() {
             @Override
             public void accept(Integer integer) {
