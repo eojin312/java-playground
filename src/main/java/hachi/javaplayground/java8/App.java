@@ -1,9 +1,11 @@
 package hachi.javaplayground.java8;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class App {
 
@@ -55,6 +57,31 @@ public class App {
                 .stream()
                 .filter(Predicate.not(OnlineClass::isClosed))
                 .forEach(oc -> System.out.println(oc.getTitle()));
-    }
 
+        springClass
+                .stream()
+                .map(OnlineClass::getTitle)
+                .forEach(System.out::println);
+
+        eojinEvents
+                .stream()
+                .flatMap(Collection::stream)
+                .forEach(oc -> System.out.println(oc.getTitle()));
+
+        System.out.println("10부터 1씩 증가 앞에 10개 빼고 10개까지만");
+        Stream.iterate(10, i -> i + 1)
+                .skip(10)
+                .limit(10)
+        .forEach(System.out::println);
+
+        boolean test = javaClass.stream().anyMatch(oc -> oc.getTitle().contains("Test"));
+        System.out.println(test);
+
+        List<String> spring = springClass
+                .stream()
+                .filter(oc -> oc.getTitle().startsWith("spring"))
+                .map(OnlineClass::getTitle).collect(Collectors.toList());
+        spring.forEach(System.out::println);
+
+    }
 }
