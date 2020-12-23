@@ -2,6 +2,7 @@ package hachi.javaplayground.java8;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class App {
@@ -42,6 +43,18 @@ public class App {
         List<List<OnlineClass>> eojinEvents = new ArrayList<>();
         eojinEvents.add(springClass);
         eojinEvents.add(javaClass);
+
+        System.out.println("spring 으로 시작하는 제목");
+        springClass
+                .stream()
+                .filter(oc -> oc.getTitle().startsWith("spring"))
+                .forEach(oc -> System.out.println(oc.getTitle()));
+
+        System.out.println("close 되지 않은 수업");
+        springClass
+                .stream()
+                .filter(Predicate.not(OnlineClass::isClosed))
+                .forEach(oc -> System.out.println(oc.getTitle()));
     }
 
 }
