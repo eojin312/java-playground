@@ -6,6 +6,8 @@ import java.util.stream.Collectors;
 
 public class App {
 
+
+
     public static List<String> show() {
         List<String> stringList = new ArrayList<>();
         stringList.add("a");
@@ -25,7 +27,21 @@ public class App {
     }
 
     public static void main(String[] args) {
-        show();
+        List<OnlineClass> springClass = new ArrayList<>();
+        springClass.add(new OnlineClass(1, "springboot", true));
+        springClass.add(new OnlineClass(2, "springboot data jpa", true));
+        springClass.add(new OnlineClass(3, "springboot mvc", false));
+        springClass.add(new OnlineClass(4, "rest api develop", false));
+
+        List<OnlineClass> javaClass = new ArrayList<>();
+        javaClass.add(new OnlineClass(5, "java Test", true));
+        javaClass.add(new OnlineClass(6, "java 8", true));
+        javaClass.add(new OnlineClass(7, "java 11", false));
+        javaClass.add(new OnlineClass(8, "java code manipulation", false));
+
+        List<List<OnlineClass>> eojinEvents = new ArrayList<>();
+        eojinEvents.add(springClass);
+        eojinEvents.add(javaClass);
     }
 
 }
