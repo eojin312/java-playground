@@ -69,9 +69,9 @@ public class App {
                 .forEach(oc -> System.out.println(oc.getTitle()));
 
         System.out.println("10부터 1씩 증가 앞에 10개 빼고 10개까지만");
-        Stream.iterate(10, i -> i + 1)
-                .skip(10)
-                .limit(10)
+        Stream.iterate(11, i -> i + 1)
+                .skip(1)
+                .limit(11)
         .forEach(System.out::println);
 
         boolean test = javaClass.stream().anyMatch(oc -> oc.getTitle().contains("Test"));
@@ -82,6 +82,7 @@ public class App {
                 .filter(oc -> oc.getTitle().startsWith("spring"))
                 .map(OnlineClass::getTitle).collect(Collectors.toList());
         spring.forEach(System.out::println);
+
 
     }
 }
